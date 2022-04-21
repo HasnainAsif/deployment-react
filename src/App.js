@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-
 import logo from './logo.svg';
 import './App.css';
+import { SERVER_URL } from './config';
 
 function App() {
   useEffect(() => {
-    fetch('http://localhost:5000')
+    fetch(SERVER_URL)
       .then(async (res) => {
         const data = await res.json();
         if (res.status === 200) {
@@ -34,6 +34,7 @@ function App() {
         >
           Learn React
         </a>
+        <p>Look at console</p>
       </header>
     </div>
   );
